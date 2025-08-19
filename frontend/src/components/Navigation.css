@@ -1,0 +1,172 @@
+/* Navbar Layout */
+.navbar {
+  background-color: #123b42;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+/* Left logo */
+.navbar-left {
+  flex: 1;
+}
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-decoration: overline;
+}
+
+/* Center nav */
+.nav-list {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-item {
+  margin: 0 1rem;
+}
+.nav-item a {
+  color: #e0f7ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: normal;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+}
+.nav-item a:hover {
+  color: #003366;
+  background-color: white;
+  transform: scale(1.1);
+  padding: 0.5rem 1rem;
+}
+
+/* --- MODIFIED SECTION: Right side (Login/Signup & Logout) --- */
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* NEW STYLING for Login/Signup to look like primary buttons */
+.auth-link {
+  background-color: #0d756e; /* Primary blue */
+  color: white;
+  padding: 0.6rem 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.auth-link:hover {
+  background-color: #ffffff; /* Darker blue on hover */
+  transform: scale(1.05);
+  color: rgb(0, 0, 0); /* Ensures text remains white */
+}
+
+.divider {
+  color: #e0f7ff;
+  margin: 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+/* UPDATED STYLING for Logout button for consistency */
+.logout-btn {
+  background-color: #dc3545; /* A clear 'danger' red */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+/* --- END OF MODIFIED SECTION --- */
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+  display: none;
+}
+
+/* Responsive (Mobile) */
+@media screen and (max-width: 960px) {
+  .nav-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #003366;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  .nav-list.open {
+    max-height: 500px;
+  }
+  .nav-item {
+    margin: 0;
+    width: 100%;
+  }
+  .nav-item a {
+    display: block;
+    text-align: center;
+    padding: 1.2rem 0;
+  }
+  .nav-item a:hover {
+    background-color: #004488;
+    transform: scale(1);
+    color: white;
+    padding: 1.2rem 0;
+  }
+  .navbar-right {
+    /* Hide the buttons on mobile, as login/logout is often handled in the menu */
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .hamburger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.4s ease-in-out;
+  }
+  .hamburger-menu.open .line-1 {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  .hamburger-menu.open .line-2 {
+    opacity: 0;
+  }
+  .hamburger-menu.open .line-3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+}

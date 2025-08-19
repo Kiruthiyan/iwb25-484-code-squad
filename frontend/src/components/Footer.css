@@ -1,0 +1,132 @@
+/* --- Main Footer Section --- */
+.footer-section {
+  background-color: #1a1a1a; /* Dark background for a modern look */
+  color: #ccc; /* Light grey text for readability */
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Grid Layout for Footer Content --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+/* --- Styling for Each Footer Column --- */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col h4 {
+  color: #ffffff; /* White color for headings */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* --- Underline effect for headings --- */
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #007bff; /* A highlight color */
+}
+
+.footer-col p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Styling for Lists (Quick Links & Contact) --- */
+.footer-links,
+.footer-contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-contact-info li {
+  margin-bottom: 12px;
+}
+
+/* --- Styling for all links in the footer --- */
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex; /* Aligns icons with text */
+  align-items: center;
+}
+
+.footer-col a:hover {
+  color: #007bff; /* Highlight color on hover */
+}
+
+/* --- Icon alignment for contact info --- */
+.footer-contact-info svg {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 1rem;
+}
+
+/* --- Social Media Links --- */
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px; /* Space between social icons */
+}
+
+.social-links a {
+  font-size: 1.5rem; /* Larger icons */
+  color: #ffffff; /* White icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff; /* Highlight color on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* --- Footer Bottom Bar --- */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #444; /* Separator line */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* --- Responsive Design for Smaller Screens --- */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack columns on top of each other */
+    text-align: center; /* Center-align text for a cleaner look */
+  }
+
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+  }
+
+  .social-links {
+    justify-content: center; /* Center social icons */
+  }
+
+  .footer-col a {
+    justify-content: center; /* Center links with icons */
+  }
+}

@@ -1,0 +1,136 @@
+/* --- Main Page Wrapper --- */
+.talent-dashboard-wrapper { /* MODIFIED: Class name updated */
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+/* --- General Section Styling --- */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Talent Hero Section --- */
+.talent-hero-section {
+  background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 21, 41, 0.85)), url('/images/talent-hero.jpeg') no-repeat center center/cover;
+  color: white;
+  padding: 6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.talent-hero-section .hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.talent-hero-section .hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  opacity: 0.9;
+}
+.hero-cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.hero-cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* --- Annual Passouts Stats Section --- */
+.stats-section {
+  background-color: #f8f9fa;
+  padding: 4rem 1.5rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+.stat-card-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+.stat-card-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+.stat-card-label {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* --- University Showcase Section --- */
+.university-showcase-section {
+  background-color: #ffffff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 2.5rem;
+}
+.university-logos-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.uni-logos-slide {
+  display: flex;
+  width: calc(250px * 12); /* 250px per card * 6 logos * 2 for clones */
+  animation: 35s slide infinite linear;
+}
+.university-logo {
+  height: 100px;
+  width: 250px;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.university-logo img {
+  max-height: 80px;
+  max-width: 180px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.university-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- Embedded Student List Section --- */
+.student-list-embed-section {
+  background-color: #f8f9fa; /* Match the student list background */
+}
