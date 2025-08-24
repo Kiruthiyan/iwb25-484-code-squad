@@ -66,13 +66,15 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #161886;
+  /* MODIFIED: Changed focus color for consistency */
+  border-color: #007bff;
 }
 
 .submit-button {
   width: 100%;
   padding: 0.8rem 1.5rem;
-  background-color: #161886;
+  /* MODIFIED: Changed button color for consistency */
+  background-color: #007bff;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -83,7 +85,8 @@
 }
 
 .submit-button:hover {
-  background-color: hsl(203, 41%, 44%);
+  /* MODIFIED: Changed button hover color for consistency */
+  background-color: #0056b3;
 }
 
 /* --- Contact Info Styling --- */
@@ -108,13 +111,15 @@
 }
 
 .contact-info-container a {
-  color: #161886;
+  /* MODIFIED: Changed link color for consistency */
+  color: #007bff;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-info-container a:hover {
-  color: hsl(203, 41%, 44%);
+  /* MODIFIED: Changed link hover color for consistency */
+  color: #0056b3;
 }
 
 /* --- Map Container --- */

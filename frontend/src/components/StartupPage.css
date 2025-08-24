@@ -1,9 +1,32 @@
+/* --- Global Reset & Box Sizing --- */
+/* This is a best practice to prevent padding and margin issues */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Main Page Wrapper (Assumed) --- */
+.startup-page-wrapper {
+  font-family: 'Poppins', sans-serif; /* Assuming this is your page's font */
+  width: 100%;
+}
+
+/* --- A generic container to keep content from stretching too wide --- */
+.section-content-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 /* --- Startup Hero Section --- */
 .startup-hero-section {
-  /* MODIFIED: Changed background gradient to run from top to bottom */
+  width: 100%;
+  min-height: 90vh; /* Set minimum height */
+  padding: 2rem 1.5rem; /* Padding for content spacing */
   background: linear-gradient(to bottom, #1c797c 0%, #08303a 100%);
   color: white;
-  padding: 6rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,8 +66,15 @@
 
 /* --- "What is a Startup?" Section --- */
 .what-is-startup-section {
+  width: 100%;
+  min-height: 90vh;
   background-color: #f8f9fa;
   padding: 4rem 1.5rem;
+  /* Added for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .characteristics-grid {
@@ -52,6 +82,8 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   text-align: left;
+  width: 100%;
+  max-width: 1200px; /* Keep the grid from becoming too wide */
 }
 
 .characteristic-card {
@@ -83,9 +115,16 @@
 
 /* --- Success Stories Section --- */
 .success-stories-section {
+  width: 100%;
+  min-height: 90vh;
   background-color: #ffffff;
   padding: 4rem 0;
   overflow: hidden;
+  /* Added for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .success-logos-container {
@@ -145,7 +184,14 @@
 
 /* --- Embedded Idea List Section --- */
 .idea-list-embed-section {
+  width: 100%;
+  min-height: 90vh;
   background-color: #f8f9fa;
   padding: 4rem 1.5rem;
   border-top: 1px solid #e9ecef;
+  /* Added for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,47 +1,106 @@
-.form-container { max-width: 700px; margin: 2rem auto; padding: 2rem; background-color: #f0f7ff; border: 1px solid #004a99; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 74, 153, 0.15); font-family: 'Poppins', sans-serif; }
-.form-container h2 { text-align: center; color: #003366; margin-bottom: 1.5rem; font-weight: 600; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.form-group { position: relative; display: flex; flex-direction: column; }
-.form-group.full-width { grid-column: 1 / -1; }
-.form-label { margin-bottom: 0.5rem; font-weight: 500; color: #003366; }
-.input-wrapper { position: relative; display: flex; align-items: center; }
-.input-icon { position: absolute; left: 12px; color: #888; font-size: 1.2rem; }
-.form-input, .form-textarea { width: 100%; padding: 0.8rem; padding-left: 2.5rem; border: 2px solid #b0c4de; border-radius: 6px; font-size: 1rem; font-family: 'Poppins', sans-serif; background-color: #fff; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
-.form-textarea { padding-left: 2.5rem; resize: vertical; }
-.form-input:focus, .form-textarea:focus { outline: none; border-color: #007bff; box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); }
-.form-input.is-valid, .form-textarea.is-valid { border-color: #28a745; }
-.form-input.is-invalid, .form-textarea.is-invalid { border-color: #dc3545; }
-.validation-error { color: #dc3545; font-size: 0.85rem; margin-top: 0.3rem; }
-.submit-btn { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 0.9rem; font-size: 1.1rem; font-weight: 600; color: #fff; background: linear-gradient(90deg, #0056b3, #007bff); border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
-.submit-btn:hover { box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); transform: translateY(-2px); }
-.submit-btn:disabled { background: #a0c3e6; cursor: not-allowed; transform: none; box-shadow: none; }
-.section-divider-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 4rem auto 3rem auto; 
-  text-align: center;
-  position: relative;
+/* --- UNIVERSAL BOX SIZING --- */
+/* This is the key fix: It makes padding part of the element's height */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.section-divider {
-  border: 0;
-  height: 2px; 
-  background-image: linear-gradient(to right, rgba(0, 51, 102, 0), rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0)); /* Fading gradient line */
-}
-
-.section-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f0f7ff; /* This MUST match your page's background color */
-  padding: 0 2rem;
-  color: #004a99; /* Dark blue title */
+/* --- Main Wrapper --- */
+.home-page-wrapper {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1.8rem;
+  color: #333;
+  width: 100%;
 }
-@media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .form-container { margin: 1rem; padding: 1.5rem; } .section-title {
-    font-size: 1.4rem;
-    padding: 0 1rem;
-  } }
+
+/* --- Universal Section Styling --- */
+.home-section {
+  width: 100%;
+  min-height: 90vh;
+  /* MODIFIED: Removed vertical padding as flexbox now handles centering */
+  padding: 0 1.5rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  /* MODIFIED: Padding is removed here too, as flexbox handles centering */
+  padding: 0; 
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-background img.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 31, 61, 0.7);
+  z-index: -1;
+}
+
+.hero-content {
+  color: #ffffff;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif; /* Best practice to use fallback fonts */
+  margin-bottom: 0.1rem;
+}
+
+.hero-content .highlight-text {
+  color: #00aaff;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  opacity: 1;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
