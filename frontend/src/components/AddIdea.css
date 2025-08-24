@@ -21,7 +21,6 @@
   letter-spacing: -0.5px;
 }
 
-/* --- GRID LAYOUT --- */
 .idea-form .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -12,77 +12,101 @@
   --text-light: #6c757d;
   --white-color: #ffffff;
   --focus-glow-color: rgba(0, 92, 151, 0.15);
+  --light-grey-bg: #f2f2f2; /* A subtle light grey for hover states */
 }
 
 .search-container {
   position: relative;
   width: 100%;
+  /* Using flexbox here can help with centering inner elements,
+     though for a single input and absolute button it's not strictly necessary. */
+  display: flex;
+  align-items: center; /* Vertically centers content if any beside input */
 }
 
 .search-bar {
   /* Box Model */
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
   width: 100%;
-  height: 52px;
-  padding: 12px 50px 12px 50px; /* Space for icon on left, clear button on right */
-  border-radius: 50px; /* Pill shape */
-  border: 1px solid var(--border-color);
+  height: 52px; /* Fixed height for consistent look */
+  padding: 12px 50px 12px 50px; /* Space for icon on left (50px) and clear button on right (50px) */
+  border-radius: 50px; /* Creates the pill shape */
+  border: 1px solid var(--border-color); /* Subtle border */
 
   /* Typography */
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-dark); /* Darker text for readability */
 
   /* Background & Icon */
   background-color: var(--white-color);
+  /* Inline SVG for search icon - ensures it's always available and scalable */
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
   background-repeat: no-repeat;
-  background-position: 20px center;
-  background-size: 18px;
+  background-position: 20px center; /* Positions the search icon 20px from left, vertically centered */
+  background-size: 18px; /* Size of the search icon */
 
   /* Behavior */
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none; /* Removes the default browser outline on focus */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover/focus */
 }
 
 .search-bar::placeholder {
-  color: var(--text-light);
+  color: var(--text-light); /* Lighter color for placeholder text */
   font-weight: 400;
 }
 
 .search-bar:hover {
-  border-color: var(--border-color-hover);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  border-color: var(--border-color-hover); /* Slightly darker border on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); /* Subtle shadow on hover */
 }
 
 .search-bar:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px var(--focus-glow-color);
+  border-color: var(--primary-color); /* Primary brand color border on focus */
+  box-shadow: 0 0 0 4px var(--focus-glow-color); /* Glow effect on focus */
+  /* Change icon color on focus using a new SVG */
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23005c97" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
 }
 
 /* --- Styles for the 'Clear' Button (×) --- */
 .clear-button {
   position: absolute;
-  right: 15px;
+  right: 12px; /* Adjust position to be visually balanced with left icon */
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Centers vertically */
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #999;
-  font-size: 1.6rem;
-  line-height: 1;
-  padding: 5px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  color: #999; /* Default color of the 'x' */
+  font-size: 1.6rem; /* Size of the 'x' character */
+  line-height: 1; /* Ensures text is properly aligned */
+  padding: 8px; /* Increased padding for a larger, easier-to-click area */
+  border-radius: 50%; /* Makes the button perfectly circular */
+  display: flex; /* Use flexbox to perfectly center the '×' icon */
+  align-items: center;
+  justify-content: center;
+  width: 36px; /* Explicit width for the circular button */
+  height: 36px; /* Explicit height for the circular button */
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Hidden from screen readers when not visible */
+  transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.1s ease; /* Smooth transitions */
 }
+
 .clear-button:hover {
-  color: var(--text-dark);
+  color: var(--text-dark); /* Darker 'x' on hover */
+  background-color: var(--light-grey-bg); /* Subtle background on hover */
 }
+
+.clear-button:active {
+  transform: translateY(-50%) scale(0.95); /* Slight "press" effect on click */
+}
+
+/* Show the clear button only when the search term has text */
 .search-container.has-text .clear-button {
   opacity: 1;
   visibility: visible;
 }
+
+/* No specific padding adjustment needed for .search-bar when .has-text because
+   the initial padding already accounts for the button's space on the right. */
