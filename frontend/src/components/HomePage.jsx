@@ -49,7 +49,7 @@ const CountUpNumber = ({ target, suffix, isVisible }) => {
 // =_=================================================================_
 // SECTION 2: STATIC DATA
 // =_=================================================================_
-const backgroundImages = [ '/images/hero1.jpeg', '/images/hero2.jpeg', '/images/hero3.jpeg' ];
+const backgroundImages = [ '/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg' ];
 
 const testimonialsData = [
   { id: 't1', image: '/images/testimonial1.jpeg', name: 'Priya Sharma', job: 'Software Engineer', opinion: 'This platform was a game-changer. I found an internship that matched my exact skill set and it turned into a full-time job offer.' },

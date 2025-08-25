@@ -24,15 +24,15 @@
 
 /* =================================================================== */
 /* --- HERO SECTION --- */
+/* (This section centers its direct child, .home-content-container, using flexbox) */
 /* =================================================================== */
 .hero-section {
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: center; /* Vertically centers content within this flex container */
+  justify-content: center; /* Horizontally centers content within this flex container */
   overflow: hidden;
 }
 
@@ -42,7 +42,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  object-fit: cover;
+  z-index: -2; /* Ensures it's behind the overlay and content */
 }
 
 .hero-background img {
@@ -67,13 +68,17 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 31, 61, 0.7);
-  z-index: -1;
+  z-index: -1; /* Ensures it's above the background image but below the content */
 }
 
+/* --- HERO CONTENT STYLES (Focus: Centering the text and adjusting "Opportunity") --- */
 .hero-content {
   color: #ffffff;
   max-width: 800px;
   padding: 0 1.5rem;
+  text-align: center !important; /* Forces text to center, overriding other potential rules */
+  position: relative; /* Ensure z-index works relative to content if needed */
+  z-index: 1; /* Ensures content is above the overlay */
 }
 
 .hero-content h1 {
@@ -86,6 +91,12 @@
 .hero-content .highlight-text {
   color: #00aaff;
 }
+
+/* --- NEW RULE: Adjust "Opportunity" slightly to the right --- */
+.hero-content h1 .highlight-text:nth-of-type(2) {
+  margin-left: 0.5rem; /* Adjust this value as needed for more or less movement */
+}
+
 
 .hero-content p {
   font-size: 1.4rem;
@@ -238,8 +249,7 @@
 .about-section {
   width: 100%;
   min-height: 100vh;
-  /* CHANGED: Dark background color */
-  background-color: #001f3d;
+  background-color: #001f3d; /* Dark background color */
   padding: 4rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -255,25 +265,23 @@
 }
 
 .about-section-left {
-  text-align: left;
+  text-align: left; /* Ensure left alignment */
 }
 
 .about-section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  /* CHANGED: Light text color for contrast */
-  color: #f1f1f1;
+  color: #f1f1f1; /* Light text color for contrast */
   margin-bottom: 2.5rem;
-  text-align: left;
+  text-align: left; /* Ensure left alignment */
 }
 
 .about-section-text {
   font-size: 1.15rem;
-  /* CHANGED: Softer light color for readability */
-  color: #b0c4de;
+  color: #b0c4de; /* Softer light color for readability */
   line-height: 1.8;
   font-weight: 500;
-  text-align: left;
+  text-align: left; /* Ensure left alignment */
   min-height: 250px;
 }
 
@@ -285,8 +293,7 @@
 .typed-cursor {
   font-size: 1.15rem;
   font-weight: 600;
-  /* CHANGED: Light color to match text */
-  color: #f1f1f1;
+  color: #f1f1f1; /* Light color to match text */
   animation: blink 0.7s infinite;
 }
 
@@ -315,13 +322,11 @@
 .stat-item .stat-number {
   font-size: 2.8rem;
   font-weight: 700;
-  /* CHANGED: Using highlight blue for pop */
-  color: #00aaff;
+  color: #00aaff; /* Using highlight blue for pop */
 }
 
 .stat-item .stat-title {
-  /* CHANGED: Light color to match paragraph */
-  color: #b0c4de;
+  color: #b0c4de; /* Light color to match paragraph */
   margin-top: 0.25rem;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -494,13 +499,12 @@
     .about-split-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
-        text-align: center;
     }
     .about-section-left {
-        text-align: center;
+        text-align: left; /* Explicitly keep left aligned on smaller screens */
     }
     .about-section-text, .about-section-title {
-        text-align: center;
+        text-align: left; /* Explicitly keep left aligned on smaller screens */
     }
     .stat-item {
         text-align: center;
@@ -516,7 +520,10 @@
     padding-right: 1rem;
   }
   .section-header h2, .testimonials-section h2, .about-section-title {
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* Adjusted for smaller screens */
+  }
+  .about-section-text {
+    font-size: 1rem; /* Adjusted for smaller screens */
   }
   .footer-grid {
     text-align: center;

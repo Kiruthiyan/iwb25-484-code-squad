@@ -13,11 +13,8 @@
 
 /* --- Talent Hero Section --- */
 .talent-hero-section {
-<<<<<<< HEAD
 background: linear-gradient(to bottom, #1c797c 0%, #08303a 100%);
-=======
   background: linear-gradient(#1c797c, rgba(0, 21, 41, 0.85)), url('/images/talent-hero.jpeg') no-repeat center center/cover;
->>>>>>> 205939ed1ec1d7c4eff2d9822fae3d343fa80f0e
   color: white;
   padding: 6rem 1.5rem;
   display: flex;
