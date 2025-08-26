@@ -184,7 +184,7 @@ const HomePage = () => {
             </Link>
 
             {/* --- COMPANY CARD (Order Changed) --- */}
-            <Link to="/advertisements" className="persona-card company-card">
+            <Link to="/findus" className="persona-card company-card">
               <div className="persona-card-content">
                 <h3>Company</h3>
                 <div className="persona-card-icon"><FaBuilding /></div>

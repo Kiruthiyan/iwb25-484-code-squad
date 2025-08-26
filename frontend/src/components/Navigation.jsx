@@ -59,7 +59,7 @@ const Navigation = ({ user }) => {
           <Link to="/findus" onClick={handleLinkClick}>Find Us</Link>
         </li>
         <li className="nav-item">
-          <Link to="/advertisements" onClick={handleLinkClick}>Company</Link>
+          <Link to="/company" onClick={handleLinkClick}>Company</Link>
         </li>
         <li className="nav-item">
           <Link to="/startup" onClick={handleLinkClick}>Startup</Link>
