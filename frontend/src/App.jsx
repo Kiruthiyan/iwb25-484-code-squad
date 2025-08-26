@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
-import AdvertisementList from "./components/AdvertisementList";
 import StartupPage from "./components/StartupPage";
 import LoginPage from "./components/AuthButtons";
 // +++ THIS IS THE CORRECTED LINE +++
@@ -14,6 +13,8 @@ import AddIdea from "./components/AddIdea";
 import TalentDashboard from "./components/TalentDashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
+import FindUsPage from "./components/FindUsPage";
+import Company from "./components/Company";
 import "./App.css";
 function App() {
 return (
@@ -25,15 +26,14 @@ return (
 <Routes>
 {/* --- Public Routes --- */}
 <Route path="/home" element={<HomePage />} />
-
-<Route path="/advertisements" element={<AdvertisementList />} />
 <Route path="/talentD" element={<TalentDashboard />} />
 <Route path="/startup" element={<StartupPage />} />
 <Route path="/contact" element={<ContactPage />} />
 <Route path="/login" element={<LoginPage />} />
 <Route path="/findus" element={<FindUsPage />} />
-code
-Code
+<Route path="/company" element={<Company />}/>
+
+
 {/* --- Private Routes (Protected) --- */}
           <Route element={<PrivateRoute />}>
             <Route path="/add" element={<AddStudent />} />
