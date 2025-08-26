@@ -13,25 +13,81 @@
 }
 
 /* --- A generic container to keep content from stretching too wide --- */
-.section-content-container {
+/* Added for consistency, used in the JS in what-is-startup and success-stories */
+.section-container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; /* Ensures padding on smaller screens */
 }
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-subheading {
+    font-size: 1.1rem;
+    color: #495057;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
 
 /* --- Startup Hero Section --- */
 .startup-hero-section {
+  position: relative; /* Essential for positioning children (image, overlay) */
   width: 100%;
   min-height: 90vh; /* Set minimum height */
-  padding: 2rem 1.5rem; /* Padding for content spacing */
-  background: linear-gradient(to bottom, #1c797c 0%, #08303a 100%);
+  /* Remove background gradient as we're using an image */
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden; /* Hide any overflow from the image */
+  padding: 2rem 1.5rem; /* Padding for content, ensure it's above overlay */
 }
+
+.startup-hero-section .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below content and overlay */
+}
+
+.startup-hero-section .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area without distortion */
+    filter: brightness(0.7); /* Slightly darken the image for text readability */
+    /* If you were to add multiple images later, you'd handle opacity/transitions here */
+}
+
+.startup-hero-section .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 2; /* Between background and content */
+}
+
+.startup-hero-section .hero-content {
+  position: relative; /* Make sure content is above overlay */
+  z-index: 3; /* Above the background and overlay */
+  max-width: 800px; /* Constrain content width */
+  padding: 20px; /* Add some padding around content */
+}
+
 
 .startup-hero-section .hero-content h1 {
   font-size: 3rem;
@@ -49,7 +105,7 @@
 
 .startup-hero-section .hero-cta-button {
   display: inline-block;
-  background-color: #08303a;
+  background-color: #007bff; /* Changed to a more common blue for CTA */
   color: #fff;
   padding: 0.8rem 2rem;
   border-radius: 50px;
@@ -69,7 +125,7 @@
   width: 100%;
   min-height: 90vh;
   background-color: #f8f9fa;
-  padding: 4rem 1.5rem;
+  padding: 4rem 0; /* Changed to 0 as section-container has horizontal padding */
   /* Added for vertical centering */
   display: flex;
   flex-direction: column;
@@ -84,6 +140,7 @@
   text-align: left;
   width: 100%;
   max-width: 1200px; /* Keep the grid from becoming too wide */
+  margin-top: 3rem; /* Spacing below sub-heading */
 }
 
 .characteristic-card {
@@ -91,6 +148,12 @@
   border-radius: 12px;
   padding: 2rem;
   border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow */
+  transition: transform 0.3s ease;
+}
+
+.characteristic-card:hover {
+    transform: translateY(-5px);
 }
 
 .characteristic-card-icon {
@@ -131,8 +194,10 @@
   position: relative;
   width: 100%;
   display: flex;
+  /* Mask gradient to fade out logos at edges */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  margin-top: 3rem; /* Spacing below heading */
 }
 
 .success-logos-slide {
@@ -194,4 +259,46 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .startup-hero-section .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .startup-hero-section .hero-content p {
+        font-size: 1rem;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .section-subheading {
+        font-size: 0.95rem;
+    }
+    .characteristics-grid {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+    .success-logo {
+        width: 200px; /* Adjust size for smaller screens */
+        margin: 0 20px;
+    }
+    .success-logos-slide {
+        width: calc(200px * 8); /* Adjust animation width */
+    }
+}
+
+@media (max-width: 480px) {
+    .startup-hero-section .hero-content h1 {
+        font-size: 2rem;
+    }
+    .startup-hero-section .hero-content p {
+        font-size: 0.9rem;
+    }
+    .hero-cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .section-heading {
+        font-size: 1.8rem;
+    }
 }

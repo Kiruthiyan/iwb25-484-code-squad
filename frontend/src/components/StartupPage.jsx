@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import IdeaList from '../components/IdeaList'; // Import the list from the components folder
 import { FaRocket, FaLightbulb, FaChartLine, FaUsers } from 'react-icons/fa';
-import './StartupPage.css';
+import './StartupPage.css'; // Make sure this CSS file exists and is linked
 
 // ===================================================================
 // SECTION 1: STATIC DATA FOR THE PAGE
@@ -62,6 +62,13 @@ const StartupPage = () => {
         <div className="startup-page-wrapper">
             {/* --- Hero Section --- */}
             <section className="startup-hero-section">
+                {/* Background image for the hero section */}
+                <div className="hero-background">
+                    <img src="/images/hero4.jpg" alt="Startup background" className="active" />
+                </div>
+                {/* Overlay for readability */}
+                <div className="hero-overlay"></div>
+                
                 <div className="hero-content">
                     <h1>Where Great Ideas Begin.</h1>
                     <p>Explore the forefront of innovation. Discover the next generation of startups and the visionary founders behind them.</p>
@@ -71,7 +78,7 @@ const StartupPage = () => {
 
             {/* --- "What is a Startup?" Section --- */}
             <section className="what-is-startup-section">
-                <div className="section-container">
+                <div className="section-container"> {/* This container was missing in your original code */}
                     <h2 className="section-heading">What is a Startup?</h2>
                     <p className="section-subheading">
                         A startup is not just a new business; it's a company designed to grow fast. Driven by innovation, they aim to create and capture value by offering a product or service in a highly scalable way.
@@ -86,11 +93,12 @@ const StartupPage = () => {
 
             {/* --- Success Stories Section --- */}
             <section className="success-stories-section">
-                <div className="section-container">
+                <div className="section-container"> {/* This container was missing in your original code */}
                     <h2 className="section-heading">From Idea to Industry Leader</h2>
                     <div className="success-logos-container">
                         <div className="success-logos-slide">
                             {successStories.map(story => <SuccessStoryLogo key={story.name} {...story} />)}
+                            {/* Duplicate for infinite scroll effect */}
                             {successStories.map(story => <SuccessStoryLogo key={`${story.name}-clone`} {...story} />)}
                         </div>
                     </div>
