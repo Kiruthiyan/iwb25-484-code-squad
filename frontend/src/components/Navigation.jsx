@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import "./Navigation.css";
@@ -56,7 +56,7 @@ const Navigation = ({ user }) => {
           <Link to="/home" onClick={handleLinkClick}>Home</Link>
         </li>
         <li className="nav-item">
-          <Link to="/find-us" onClick={handleLinkClick}>Find Us</Link>
+          <Link to="/findus" onClick={handleLinkClick}>Find Us</Link>
         </li>
         <li className="nav-item">
           <Link to="/advertisements" onClick={handleLinkClick}>Company</Link>

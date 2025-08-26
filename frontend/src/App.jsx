@@ -32,6 +32,7 @@ return (
 <Route path="/startup" element={<StartupPage />} />
 <Route path="/contact" element={<ContactPage />} />
 <Route path="/login" element={<LoginPage />} />
+<Route path="/findus" element={<FindUsPage />} />
 code
 Code
 {/* --- Private Routes (Protected) --- */}

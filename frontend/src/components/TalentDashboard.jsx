@@ -63,6 +63,13 @@ const TalentDashboard = () => {
         <div className="talent-dashboard-wrapper">
             {/* --- Hero Section for the Talent Dashboard --- */}
             <section className="talent-hero-section">
+                {/* Background image for the hero section */}
+                <div className="hero-background">
+                    <img src="/images/hero5.jpg" alt="Talent hero background" className="active" />
+                </div>
+                {/* Overlay for readability */}
+                <div className="hero-overlay"></div>
+
                 <div className="hero-content">
                     <h1>The Future of Tech, Sourced Here.</h1>
                     <p>Tap into Sri Lanka's brightest minds in software engineering, data science, and cybersecurity from leading universities.</p>
