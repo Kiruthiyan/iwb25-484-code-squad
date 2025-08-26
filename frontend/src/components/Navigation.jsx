@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -44,7 +45,6 @@ const Navigation = ({ user }) => {
     <nav className="navbar">
       {/* Left: Logo */}
       <div className="navbar-left">
-        {/* --- MODIFIED: Added onClick handler --- */}
         <Link to="/home" className="navbar-logo" onClick={handleLinkClick}>
           NexusLinK
         </Link>
@@ -56,32 +56,30 @@ const Navigation = ({ user }) => {
           <Link to="/home" onClick={handleLinkClick}>Home</Link>
         </li>
         <li className="nav-item">
-          <Link to="/advertisements" onClick={handleLinkClick}>Companies</Link>
+          <Link to="/find-us" onClick={handleLinkClick}>Find Us</Link>
         </li>
         <li className="nav-item">
-          <Link to="/startup" onClick={handleLinkClick}>Startups</Link>
+          <Link to="/advertisements" onClick={handleLinkClick}>Company</Link>
         </li>
         <li className="nav-item">
-          <Link to="/talent" onClick={handleLinkClick}>Job Seekers</Link>
+          <Link to="/startup" onClick={handleLinkClick}>Startup</Link>
         </li>
-       {/* +++ THIS IS THE NEW CODE +++ */}
+        <li className="nav-item">
+          <Link to="/talentD" onClick={handleLinkClick}>Job Seeker</Link>
+        </li>
         <li className="nav-item">
           <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
         </li>
       </ul>
 
-      {/* Right: Login/Signup OR Logout */}
+      {/* Right: Login OR Logout */}
       <div className="navbar-right">
         {user ? (
+          // If user exists, show Logout button
           <button onClick={handleLogout} className="logout-btn">Logout</button>
         ) : (
-          <>
-            {/* --- MODIFIED: Added onClick handler --- */}
-            <Link to="/login" className="auth-link" onClick={handleLinkClick}>Login</Link>
-            <span className="divider">|</span>
-            {/* --- MODIFIED: Link to /login and added onClick handler --- */}
-            <Link to="/login" className="auth-link" onClick={handleLinkClick}>Signup</Link>
-          </>
+          // If user does NOT exist, show only the Login link
+          <Link to="/login" className="auth-link" onClick={handleLinkClick}>Login</Link>
         )}
       </div>
 

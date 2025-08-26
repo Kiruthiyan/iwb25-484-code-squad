@@ -76,13 +76,15 @@
   color: #ffffff;
   max-width: 800px;
   padding: 0 1.5rem;
-  text-align: center !important; /* Forces text to center, overriding other potential rules */
+  /* MODIFIED: These two lines handle all centering */
+  margin: 0 auto; /* Centers the entire content block horizontally */
+  text-align: center; /* Centers the text (h1, p) inside the block */
   position: relative; /* Ensure z-index works relative to content if needed */
   z-index: 1; /* Ensures content is above the overlay */
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 0.1rem;
@@ -513,7 +515,8 @@
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.5rem;
+    /* MODIFIED: Changed this from 2.5rem to make it bigger on mobile */
+    font-size: 3.5rem; 
   }
   .hero-content p {
     padding-left: 1rem;

@@ -1,0 +1,69 @@
+.findus-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* Takes up most of the screen height */
+  padding: 2rem;
+  background-color: #f4f7f6; /* A light, neutral background */
+  font-family: 'Poppins', sans-serif;
+}
+
+.findus-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.findus-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.findus-content p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.location-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.location-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #001f3d;
+}
+
+.location-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.map-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
