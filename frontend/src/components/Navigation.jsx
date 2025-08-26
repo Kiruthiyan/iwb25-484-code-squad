@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// Corrected: Combined all imports from 'react-router-dom' into one line
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -68,7 +68,9 @@ const Navigation = ({ user }) => {
           <Link to="/talentD" onClick={handleLinkClick}>Job Seeker</Link>
         </li>
         <li className="nav-item">
-          <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
+          {/* This was pointing to /contact, but you have a special handler.
+              You might want to use the handler here as well. */}
+          <a href="#footer-contact" onClick={handleContactClick}>Contact</a>
         </li>
       </ul>
 

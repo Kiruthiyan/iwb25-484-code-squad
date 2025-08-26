@@ -14,6 +14,7 @@ import AddIdea from "./components/AddIdea";
 import TalentDashboard from "./components/TalentDashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
+import FindUsPage from "./components/FindUsPage";
 import "./App.css";
 function App() {
 return (
