@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// +++ THIS IS THE CORRECTED LINE +++
+// All imports from 'react-router-dom' are now combined into a single line.
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -13,7 +14,7 @@ const Navigation = ({ user }) => {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // --- NEW: Reusable function to close menu and scroll to top ---
+  // --- Reusable function to close menu and scroll to top ---
   const handleLinkClick = () => {
     closeMenu();
     window.scrollTo(0, 0);
@@ -84,8 +85,8 @@ const Navigation = ({ user }) => {
       </div>
 
       {/* Hamburger (only for mobile) */}
-      <div 
-        className={isMenuOpen ? "hamburger-menu open" : "hamburger-menu"} 
+      <div
+        className={isMenuOpen ? "hamburger-menu open" : "hamburger-menu"}
         onClick={toggleMenu}
       >
         <div className="line line-1"></div>
