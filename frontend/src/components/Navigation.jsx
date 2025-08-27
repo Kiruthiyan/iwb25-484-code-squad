@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// Corrected: Combined all imports from 'react-router-dom' into one line
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
