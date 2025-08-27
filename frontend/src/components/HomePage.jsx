@@ -174,7 +174,7 @@ const HomePage = () => {
           <div className="persona-cards-grid">
             
             {/* --- STUDENT CARD (Order Changed) --- */}
-            <Link to="/talent" className="persona-card student-card">
+            <Link to="/talentD" className="persona-card student-card">
               <div className="persona-card-content">
                 <h3>Student or Intern</h3>
                 <div className="persona-card-icon"><FaUserGraduate /></div>
