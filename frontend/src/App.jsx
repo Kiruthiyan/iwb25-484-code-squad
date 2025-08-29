@@ -6,7 +6,11 @@ import HomePage from "./components/HomePage";
 import StartupPage from "./components/StartupPage";
 import LoginPage from "./components/AuthButtons";
 // +++ THIS IS THE CORRECTED LINE +++
+<<<<<<< HEAD
 import ContactPage from "./components/contactPage";
+=======
+import ContactPage from "./components/ContactPage";
+>>>>>>> 03530a5c33fe25b153901607926fdc95d9e64660
 import AddStudent from "./components/AddStudent";
 import AddAdvertisement from "./components/AddAdvertisement";
 import AddIdea from "./components/AddIdea";
