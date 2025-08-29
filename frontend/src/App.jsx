@@ -6,13 +6,15 @@ import HomePage from "./components/HomePage";
 import StartupPage from "./components/StartupPage";
 import LoginPage from "./components/AuthButtons";
 // +++ THIS IS THE CORRECTED LINE +++
-import ContactPage from './components/ContactPage'; // Corrected path to 'components'
+import ContactPage from "./components/ContactPage";
 import AddStudent from "./components/AddStudent";
 import AddAdvertisement from "./components/AddAdvertisement";
 import AddIdea from "./components/AddIdea";
 import TalentDashboard from "./components/TalentDashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
+import Company from "./components/Company";
+import FindUsPage from "./components/FindUsPage";
 import "./App.css";
 function App() {
 return (

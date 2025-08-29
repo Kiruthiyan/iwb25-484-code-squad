@@ -35,7 +35,7 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
   position: relative; /* Essential for positioning children (image, overlay) */
   width: 100%;
   padding: 6rem 1.5rem; /* Use responsive padding */
-  min-height: 500px; /* Adjust min height as needed */
+  min-height: 90vh; /* Adjust min height as needed */
   color: white;
   display: flex;
   flex-direction: column;
@@ -94,10 +94,12 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 
 .hero-section-jobs h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 3.8rem;
+  font-size: 3.1rem;
   font-weight: 700;
   color: var(--white-color);
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
+   margin-left: 5%;
+  margin-right: 5%;
   text-shadow: 1px 1px 8px rgba(0,0,0,0.3);
 }
 .hero-section-jobs p {

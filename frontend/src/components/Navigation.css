@@ -1,6 +1,6 @@
 /* Navbar Layout */
 .navbar {
-  background-color: #123b42;
+  background-color: #001f3d;;
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@
 
 /* NEW STYLING for Login/Signup to look like primary buttons */
 .auth-link {
-  background-color: #0d756e; /* Primary blue */
+  background-color: #00aaff; /* Primary blue */
   color: white;
   padding: 0.6rem 1.1rem;
   border-radius: 5px;

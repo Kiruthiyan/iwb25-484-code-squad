@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// Corrected: Combined all imports from 'react-router-dom' into one line
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -19,16 +18,7 @@ const Navigation = ({ user }) => {
     window.scrollTo(0, 0);
   };
 
-  const handleContactClick = (e) => {
-    closeMenu();
-    e.preventDefault();
-    if (location.pathname === '/home' || location.pathname === '/') {
-      const footer = document.getElementById('footer-contact');
-      if (footer) footer.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate('/home#footer-contact');
-    }
-  };
+  
 
   const handleLogout = async () => {
     closeMenu();
@@ -70,7 +60,7 @@ const Navigation = ({ user }) => {
         <li className="nav-item">
           {/* This was pointing to /contact, but you have a special handler.
               You might want to use the handler here as well. */}
-          <a href="#footer-contact" onClick={handleContactClick}>Contact</a>
+          <a href="/contact" onClick={handleLinkClick}>Contact</a>
         </li>
       </ul>
 
