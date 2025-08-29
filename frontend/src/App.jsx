@@ -6,7 +6,7 @@ import HomePage from "./components/HomePage";
 import StartupPage from "./components/StartupPage";
 import LoginPage from "./components/AuthButtons";
 // +++ THIS IS THE CORRECTED LINE +++
-import ContactPage from "./components/ContactPage";
+import ContactPage from "./components/contactPage";
 import AddStudent from "./components/AddStudent";
 import AddAdvertisement from "./components/AddAdvertisement";
 import AddIdea from "./components/AddIdea";
