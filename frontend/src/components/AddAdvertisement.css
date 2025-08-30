@@ -1,23 +1,19 @@
-/* --- UNIVERSAL BOX SIZING --- */
-/* This is the key fix: It makes padding part of the element's height */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- Main Wrapper --- */
 .home-page-wrapper {
   font-family: 'Poppins', sans-serif;
   color: #333;
   width: 100%;
 }
 
-/* --- Universal Section Styling --- */
 .home-section {
   width: 100%;
   min-height: 90vh;
-  /* MODIFIED: Removed vertical padding as flexbox now handles centering */
   padding: 0 1.5rem; 
   display: flex;
   flex-direction: column;
@@ -31,7 +27,6 @@
   width: 100%;
 }
 
-/* --- Hero Section --- */
 .hero-section {
   position: relative;
   min-height: 90vh;
@@ -41,7 +36,6 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  /* MODIFIED: Padding is removed here too, as flexbox handles centering */
   padding: 0; 
 }
 
@@ -88,7 +82,7 @@
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
-  font-family: 'Poppins', sans-serif; /* Best practice to use fallback fonts */
+  font-family: 'Poppins', sans-serif; 
   margin-bottom: 0.1rem;
 }
 

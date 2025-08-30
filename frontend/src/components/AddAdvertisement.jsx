@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { db } from "../firebase"; // Import Realtime DB service from your firebase.js
-import { ref, set, push } from "firebase/database"; // Import the necessary DB functions
-import "./AddAdvertisement.css"; // Assuming you have this CSS file
+import { db } from "../firebase"; 
+import { ref, set, push } from "firebase/database"; 
+import "./AddAdvertisement.css"; 
 import {
   FaBuilding,
   FaBriefcase,

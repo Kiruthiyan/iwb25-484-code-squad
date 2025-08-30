@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import IdeaList from '../components/IdeaList'; // Import the list from the components folder
+import IdeaList from '../components/IdeaList'; 
 import { FaRocket, FaLightbulb, FaChartLine, FaUsers } from 'react-icons/fa';
 import './StartupPage.css'; // Make sure this CSS file exists and is linked
 
-// ===================================================================
-// SECTION 1: STATIC DATA FOR THE PAGE
-// ===================================================================
+
 
 const startupCharacteristics = [
     { icon: <FaLightbulb />, title: 'Innovation', description: 'Startups aim to solve problems in new ways, often disrupting entire industries with novel technology or business models.' },
@@ -22,9 +20,7 @@ const successStories = [
     { name: 'Spotify', logoUrl: '/images/spotify.png', description: 'Changed how the world listens to music with its streaming service.' },
 ];
 
-// ===================================================================
-// SECTION 2: REUSABLE SUB-COMPONENTS
-// ===================================================================
+
 
 function CharacteristicCard({ icon, title, description }) {
     return (
@@ -54,9 +50,7 @@ SuccessStoryLogo.propTypes = {
     logoUrl: PropTypes.string.isRequired,
 };
 
-// ===================================================================
-// SECTION 3: MAIN STARTUP PAGE COMPONENT
-// ===================================================================
+
 const StartupPage = () => {
     return (
         <div className="startup-page-wrapper">
