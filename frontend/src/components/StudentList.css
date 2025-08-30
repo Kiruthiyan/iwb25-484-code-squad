@@ -13,7 +13,7 @@
   margin: 0 auto;
 }
 
-/* --- Section Title --- */
+
 .section-divider-container {
   position: relative;
   text-align: center;
@@ -36,11 +36,10 @@
   color: #343a40;
 }
 
-/* --- Controls Container (Search Bar + Filters) --- */
 .controls-container {
   display: flex;
-  flex-direction: column; /* Stacks items vertically */
-  gap: 1.5rem; /* Space between search bar row and filter row */
+  flex-direction: column; 
+  gap: 1.5rem; 
   margin-bottom: 3rem;
   padding: 2rem 1.5rem;
   background-color: #ffffff;
@@ -48,12 +47,10 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* This wrapper ensures the SearchBar component takes up the full width of its row */
 .search-bar-wrapper {
   width: 100%;
 }
 
-/* This container holds the filter buttons in the second row */
 .filter-sort-container {
   display: flex;
   flex-wrap: wrap;
@@ -89,14 +86,12 @@
   background-color: #5a6268;
 }
 
-/* --- Main Grid for Candidate Cards --- */
 .student-list-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* --- Card Styles --- */
 .card-container {
   background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden; display: flex; flex-direction: column; padding: 1.5rem; text-align: center;
@@ -122,6 +117,5 @@
   background: #e0eaff; color: #004085; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.85rem; font-weight: 500;
 }
 
-/* --- Loading & Message States --- */
 .loading-message, .no-results-message, .error-message { text-align: center; font-size: 1.2rem; color: #6c757d; padding: 4rem 0; }
 .error-message { color: #dc3545; }

@@ -1,7 +1,5 @@
-/* Import the Poppins font for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* --- Main Page Wrapper --- */
 .idea-page-wrapper {
   font-family: 'Poppins', sans-serif;
   background-color: #f8f9fa;
@@ -17,7 +15,6 @@
   width: 100%;
 }
 
-/* --- Section Title --- */
 .section-divider-container {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -38,8 +35,6 @@
   position: relative;
   z-index: 1;
 }
-
-/* --- Grid for the Cards --- */
 .idea-list-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -48,7 +43,6 @@
 
 }
 
-/* --- Idea Card Styles (MODIFIED FOR READABILITY) --- */
 .idea-card.card-container {
   background: #fff;
   border-radius: 12px;
@@ -56,7 +50,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 2rem; /* Increased padding */
+  padding: 2rem; 
   transition: transform 0.3s, box-shadow 0.3s;
   border-top: 4px solid #20c997;
 }
@@ -65,7 +59,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Founder Header Section */
 .idea-card .founder-header {
   display: flex;
   align-items: center;
@@ -86,53 +79,50 @@
 }
 .idea-card .founder-details h3 {
   margin: 0;
-  font-size: 1.3rem; /* Larger name */
+  font-size: 1.3rem; 
   font-weight: 600;
   color: #212529;
 }
 .idea-card .founder-degree {
   margin: 0.2rem 0 0.5rem 0;
   color: #6c757d;
-  font-size: 0.95rem; /* Larger degree */
+  font-size: 0.95rem;
 }
 .idea-card .status-badge {
   display: inline-block;
   background-color: #e6f7ff;
   color: #0056b3;
-  padding: 0.3rem 0.8rem; /* More padding */
+  padding: 0.3rem 0.8rem; 
   border-radius: 15px;
-  font-size: 0.85rem; /* Larger font */
-  font-weight: 600; /* Bolder */
+  font-size: 0.85rem; 
+  font-weight: 600; 
 }
 
-/* Main Idea Content */
 .idea-card .idea-content {
   text-align: left;
   margin-bottom: 1rem;
   flex-grow: 1;
 }
 .idea-card .idea-project-name {
-  font-size: 1.5rem; /* Larger project name */
+  font-size: 1.5rem; 
   font-weight: 600;
   color: #003366;
   margin: 0 0 0.3rem 0;
 }
 .idea-card .idea-company-name {
-  font-size: 1rem; /* Larger company name */
+  font-size: 1rem; 
   color: #6c757d;
-  margin-bottom: 1.5rem; /* More space */
+  margin-bottom: 1.5rem; 
 }
 .idea-card .idea-description {
   font-style: italic;
-  color: #343a40; /* Darker text */
+  color: #343a40; 
   border-left: 3px solid #20c997;
   padding-left: 1rem;
   margin: 0;
-  font-size: 1.05rem; /* Larger description */
-  line-height: 1.7; /* Better spacing */
+  font-size: 1.05rem; 
+  line-height: 1.7; 
 }
-
-/* Skills, Needs, Certificates Sections */
 .idea-card .skills {
   text-align: left;
   margin-top: 1rem;
@@ -157,19 +147,17 @@
 .idea-card .skills li {
   background: #f0f7ff;
   color: #0056b3;
-  padding: 0.4rem 0.9rem; /* More padding */
+  padding: 0.4rem 0.9rem; 
   border-radius: 15px;
-  font-size: 0.9rem; /* Larger tags */
+  font-size: 0.9rem; 
   font-weight: 500;
 }
 
-/* Special styling for "Looking For" tags */
 .idea-card .needs-section li {
   background-color: #e6fff0;
   color: #00642e;
 }
 
-/* Certificate Links */
 .idea-card .certificate-section .certificate-links {
   display: flex;
   flex-wrap: wrap;
@@ -192,7 +180,6 @@
   border-color: #007bff;
 }
 
-/* --- Loading & Message States --- */
 .loading-message, .no-results-message, .error-message {
   text-align: center;
   font-size: 1.2rem;

@@ -65,18 +65,17 @@ const AddAdvertisement = () => {
     setLoading(true);
     setSubmitMessage("Posting advertisement...");
     try {
-      // 1. Assemble the final JSON data packet with a timestamp
+      
       const finalJsonData = {
         ...formData,
         postedAt: new Date().toISOString(),
       };
 
-      // 2. Get a reference to the 'advertisements' list in the Realtime Database.
+      
       const adListRef = ref(db, `advertisements/${auth.currentUser.uid}`);
 
  
 
-      // 4. Set the data for the new entry.
       await set(adListRef, finalJsonData);
 
       setSubmitMessage("Advertisement posted successfully!");

@@ -85,21 +85,18 @@ const StartupPage = () => {
                 </div>
             </section>
 
-            {/* --- Success Stories Section --- */}
             <section className="success-stories-section">
-                <div className="section-container"> {/* This container was missing in your original code */}
+                <div className="section-container"> 
                     <h2 className="section-heading">From Idea to Industry Leader</h2>
                     <div className="success-logos-container">
                         <div className="success-logos-slide">
                             {successStories.map(story => <SuccessStoryLogo key={story.name} {...story} />)}
-                            {/* Duplicate for infinite scroll effect */}
                             {successStories.map(story => <SuccessStoryLogo key={`${story.name}-clone`} {...story} />)}
                         </div>
                     </div>
                 </div>
             </section>
             
-            {/* --- Embedded IdeaList Component --- */}
             <section className="idea-list-embed-section">
                 <IdeaList />
             </section>

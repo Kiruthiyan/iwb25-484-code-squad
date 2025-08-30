@@ -1,6 +1,4 @@
-/* ===================================================================
-   GLOBAL STYLES & FONT IMPORTS
-   =================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 .company-page-wrapper {
@@ -15,7 +13,7 @@
   margin: 0 auto;
 }
 .section-pre-title {
-  color: #22c55e; /* Green accent color */
+  color: #22c55e; 
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
@@ -24,12 +22,9 @@
 .section-paragraph {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #4a5568; /* Softer text color */
+  color: #4a5568; 
 }
 
-/* ===================================================================
-   SECTION 1: HERO
-   =================================================================== */
 .hero-section {
   position: relative;
   height: 90vh;
@@ -38,7 +33,7 @@
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: rgba(0, 51, 102, 0.4); /* Solid blue background */
+  background: rgba(0, 51, 102, 0.4); 
   overflow: hidden;
   color: white;
 }
@@ -51,7 +46,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35; /* Semi-transparent to blend with blue */
+  opacity: 0.35; 
   z-index: 0;
 }
 
@@ -61,7 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 51, 102, 0.4); /* Solid blue background */
+  background: rgba(0, 51, 102, 0.4); 
   z-index: 1;
 }
 
@@ -99,9 +94,7 @@
   transform: translateY(-3px);
 }
 
-/* ===================================================================
-   SECTION 2 & 3: AUTOPILOT & ATS
-   =================================================================== */
+
 .autopilot-section {
   background-color: #f8f9fa;
 }
@@ -140,7 +133,7 @@
   background-color: #333;
 }
 .build-pipeline-link {
-  color: #16a34a; /* Green */
+  color: #16a34a; 
   font-weight: 600;
   text-decoration: none;
   font-size: 1.1rem;
@@ -153,11 +146,9 @@
   gap: 1rem;
 }
 
-/* ===================================================================
-   SECTION 4: WHY RECRUITERS LOVE US
-   =================================================================== */
+
 .love-us-section {
-  background-color: #f0f7ff; /* Soft light blue */
+  background-color: #f0f7ff; 
 }
 .split-title-group {
   margin-bottom: 2.5rem;
@@ -182,8 +173,8 @@
   text-align: left;
 }
 .icon-list-icon-wrapper {
-  background-color: #dcfce7; /* Light green */
-  color: #16a34a; /* Dark green */
+  background-color: #dcfce7; 
+  color: #16a34a; 
   border-radius: 50%;
   min-width: 50px;
   height: 50px;
@@ -199,9 +190,7 @@
   margin: 0;
 }
 
-/* ===================================================================
-   SECTION 5: FEATURED CARDS
-   =================================================================== */
+
 .featured-cards-section {
   background-color: #fff;
 }
@@ -243,17 +232,15 @@
 .featured-card-cta {
   margin-top: 2rem;
   font-weight: 600;
-  color: #16a34a; /* Green */
+  color: #16a34a; 
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* ===================================================================
-   SECTION 6: QUOTES
-   =================================================================== */
+
 .quotes-section {
-  background-color: #f0f7ff; /* Soft light blue */
+  background-color: #f0f7ff; 
 }
 .quotes-grid {
   display: grid;
@@ -264,11 +251,11 @@
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
-  border-left: 5px solid #22c55e; /* Green accent */
+  border-left: 5px solid #22c55e; 
 }
 .quote-icon {
   font-size: 2rem;
-  color: #16a34a; /* Green */
+  color: #16a34a; 
   margin-bottom: 1rem;
 }
 .quote-card p {
@@ -279,9 +266,7 @@
   margin: 0;
 }
 
-/* ===================================================================
-   SECTION 7: RESPONSIVE DESIGN
-   =================================================================== */
+
 @media (max-width: 960px) {
   .autopilot-grid, .ats-grid, .featured-cards-grid, .quotes-grid {
     grid-template-columns: 1fr;
@@ -291,7 +276,7 @@
     max-width: 500px;
   }
   .ats-grid .ats-image {
-    order: 2; /* Flips the order on mobile */
+    order: 2; 
   }
 }
 @media (max-width: 768px) {

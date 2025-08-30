@@ -1,11 +1,9 @@
-/* --- Main Contact Page Wrapper --- */
 .contact-page-wrapper {
   font-family: 'Poppins', sans-serif;
   background-color: #f7f9fc;
   padding: 4rem 1.5rem;
 }
 
-/* --- Contact Header --- */
 .contact-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -25,7 +23,6 @@
   margin: 0 auto;
 }
 
-/* --- Contact Body Layout --- */
 .contact-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,7 +31,6 @@
   margin: 0 auto;
 }
 
-/* --- Contact Form Styling --- */
 .contact-form-container {
   background-color: #ffffff;
   padding: 2.5rem;
@@ -66,14 +62,12 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  /* MODIFIED: Changed focus color for consistency */
   border-color: #007bff;
 }
 
 .submit-button {
   width: 100%;
   padding: 0.8rem 1.5rem;
-  /* MODIFIED: Changed button color for consistency */
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -85,11 +79,9 @@
 }
 
 .submit-button:hover {
-  /* MODIFIED: Changed button hover color for consistency */
   background-color: #0056b3;
 }
 
-/* --- Contact Info Styling --- */
 .contact-info-container {
   background-color: #ffffff;
   padding: 2.5rem;
@@ -111,25 +103,21 @@
 }
 
 .contact-info-container a {
-  /* MODIFIED: Changed link color for consistency */
   color: #007bff;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-info-container a:hover {
-  /* MODIFIED: Changed link hover color for consistency */
   color: #0056b3;
 }
 
-/* --- Map Container --- */
 .map-container {
   margin-top: 2rem;
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 992px) {
   .contact-body {
     grid-template-columns: 1fr;

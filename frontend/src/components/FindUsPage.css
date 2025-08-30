@@ -1,6 +1,3 @@
-/* ===================================================================
-//  FONTS & GLOBAL STYLES
-// =================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
@@ -20,73 +17,63 @@ html { scroll-behavior: smooth; }
 body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif; color: var(--text-dark); }
 
 
-/* ===================================================================
-//  MAIN PAGE WRAPPER (PADDING CORRECTION)
-// =================================================================== */
+
 .advertisement-page-wrapper {
   width: 100%;
 }
 
 
-/* ===================================================================
-//  HERO SECTION (IMAGE BACKGROUND)
-// =================================================================== */
 .hero-section-jobs {
-  position: relative; /* Essential for positioning children (image, overlay) */
+  position: relative; 
   width: 100%;
-  padding: 6rem 1.5rem; /* Use responsive padding */
-  min-height: 90vh; /* Adjust min height as needed */
+  padding: 6rem 1.5rem; 
+  min-height: 90vh; 
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden; /* Hide any overflow from the image */
-  margin-bottom: 5rem; /* Standardized spacing */
+  overflow: hidden; 
+  margin-bottom: 5rem; 
 }
 
-/* Background Image Layer */
 .hero-section-jobs .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Below content and overlay */
+    z-index: 1; 
 }
 
 .hero-section-jobs .hero-background img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire area without distortion */
-    filter: brightness(0.6); /* Darken the image for text readability (adjust 0.6 as needed) */
+    object-fit: cover; 
+    filter: brightness(0.6); 
 }
 
-/* Overlay Layer */
 .hero-section-jobs .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 51, 102, 0.4); /* A semi-transparent dark blue overlay */
-    z-index: 2; /* Between background and content */
+    background: rgba(0, 51, 102, 0.4); 
+    z-index: 2; 
 }
 
-/* Content Layer */
 .hero-content {
-    position: relative; /* Make sure content is above overlay */
-    z-index: 3; /* Above the background and overlay */
+    position: relative; 
+    z-index: 3; 
     width: 100%;
-    /* KEY CHANGE: Increased max-width to 1400px for consistency with other sections */
-    max-width: 1400px; /* This value controls the content width */
+    max-width: 1400px; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Remove old pseudo-element for pattern */
 .hero-section-jobs::before {
   content: none;
 }
@@ -105,11 +92,11 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 .hero-section-jobs p {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 600px; /* This specific text paragraph might still be narrower for readability */
+  max-width: 600px; 
   margin: 0 auto 2.5rem auto;
 }
 .search-bar-container {
-    display: flex; align-items: center; width: 100%; max-width: 650px; /* Search bar might be narrower by design */
+    display: flex; align-items: center; width: 100%; max-width: 650px; 
     background-color: var(--white-color); border-radius: 50px; padding: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
@@ -126,9 +113,6 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 .search-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 100, 120, 0.3); }
 
 
-/* ===================================================================
-//  STANDARD SECTION CONTAINER (FOR CENTERING)
-// =================================================================== */
 
 .info-box-section,
 .featured-companies-section,
@@ -137,11 +121,11 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 #student-list-section,
 #idea-list-section {
   width: 100%;
-  max-width: 1400px; /* The max width of the content area for these sections */
+  max-width: 1400px; 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
-  padding: 0 1.5rem; /* Responsive padding */
+  padding: 0 1.5rem; 
 }
 @media (min-width: 768px) {
   .info-box-section,
@@ -190,7 +174,6 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 .company-logo-card img { height: 100%; max-width: 120px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s ease; }
 .company-logo-card:hover img { filter: grayscale(0%); opacity: 1; }
 
-/* --- Trending Jobs Section --- */
 .trending-jobs-section {
     background-color: var(--white-color); border-radius: 12px; padding: 2.5rem; border: 1px solid var(--border-color);
 }
@@ -200,7 +183,6 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 .trending-job-position { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
 .trending-job-salary { color: var(--text-light); font-size: 1rem; }
 
-/* --- Main Advertisement List Section --- */
 #main-advertisements {
   background-color: var(--white-color); padding: 3rem 2rem; border-radius: 12px; border: 1px solid var(--border-color);
 }
@@ -222,7 +204,6 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 .advertisement-contact a { color: #4dabf7; text-decoration: none; }
 .advertisement-contact a:hover { text-decoration: underline; }
 
-/* --- Utilities --- */
 .loading-message, .no-results-message { color: var(--text-light); font-size: 1.2rem; font-weight: 500; text-align: center; padding: 2rem; width: 100%; }
 .section-divider-container { width: 100%; max-width: 1200px; margin: 0 auto 3rem auto; text-align: center; position: relative; }
 .section-divider { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(0, 92, 151, 0), rgba(0, 92, 151, 0.75), rgba(0, 92, 151, 0)); }
@@ -238,13 +219,13 @@ body { background-color: var(--light-bg-color); font-family: 'Inter', sans-serif
 
   .section-title, .section-heading { font-size: 1.4rem; }
   #main-advertisements { padding: 2rem 1.5rem; }
-  .info-box-grid { grid-template-columns: 1fr; } /* Stack cards on small screens */
+  .info-box-grid { grid-template-columns: 1fr; } 
 }
 
 @media (max-width: 480px) {
   .hero-section-jobs h1 { font-size: 2rem; }
   .hero-section-jobs p { font-size: 0.9rem; }
   .section-heading { font-size: 1.8rem; }
-  .section-title { font-size: 1.2rem; padding: 0 1rem; } /* Smaller padding for title */
-  .advertisement-card { width: 100%; } /* Full width cards */
+  .section-title { font-size: 1.2rem; padding: 0 1rem; } 
+  .advertisement-card { width: 100%; } 
 }

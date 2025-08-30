@@ -1,25 +1,20 @@
-/* --- Global Reset & Box Sizing --- */
-/* This is a best practice to prevent padding and margin issues */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- Main Page Wrapper --- */
-.talent-dashboard-wrapper { /* MODIFIED: Class name updated */
+.talent-dashboard-wrapper { 
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
 }
 
-/* --- General Section Styling --- */
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* --- General Heading and Subheading Styles for sections --- */
 .section-heading {
   text-align: center;
   font-size: 2rem;
@@ -29,19 +24,17 @@
 }
 
 
-/* --- Talent Hero Section --- */
 .talent-hero-section {
-  position: relative; /* Essential for positioning children (image, overlay) */
+  position: relative; 
   width: 100%;
-  min-height: 90vh; /* Set minimum height */
-  /* Remove existing background properties as we're using an image and overlay */
+  min-height: 90vh; 
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden; /* Hide any overflow from the image */
-  padding: 6rem 1.5rem; /* Padding for content, ensure it's above overlay */
+  overflow: hidden; 
+  padding: 6rem 1.5rem; 
 }
 
 .talent-hero-section .hero-background {
@@ -50,15 +43,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Below content and overlay */
+    z-index: 1; 
 }
 
 .talent-hero-section .hero-background img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire area without distortion */
-    filter: brightness(0.7); /* Slightly darken the image for text readability */
-    /* If you were to add multiple images later, you'd handle opacity/transitions here */
+    object-fit: cover; 
+    filter: brightness(0.7); 
 }
 
 .talent-hero-section .hero-overlay {
@@ -67,15 +59,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 21, 41, 0.65); /* A dark blue overlay */
-    z-index: 2; /* Between background and content */
+    background: rgba(0, 21, 41, 0.65); 
+    z-index: 2; 
 }
 
 .talent-hero-section .hero-content {
-  position: relative; /* Make sure content is above overlay */
-  z-index: 3; /* Above the background and overlay */
-  max-width: 800px; /* Constrain content width */
-  padding: 20px; /* Add some padding around content */
+  position: relative; 
+  z-index: 3; 
+  max-width: 800px; 
+  padding: 20px; 
 }
 
 .talent-hero-section .hero-content h1 {
@@ -107,7 +99,6 @@
   transform: translateY(-2px);
 }
 
-/* --- Annual Passouts Stats Section --- */
 .stats-section {
   background-color: #f8f9fa;
   padding: 4rem 1.5rem;
@@ -123,7 +114,7 @@
   padding: 2rem;
   text-align: center;
   border: 1px solid #e9ecef;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
   transition: transform 0.3s ease;
 }
 .stat-card:hover {
@@ -144,10 +135,9 @@
   color: #6c757d;
 }
 
-/* --- University Showcase Section --- */
 .university-showcase-section {
   background-color: #ffffff;
-  padding: 4rem 0; /* Changed to 0 as section-container has horizontal padding */
+  padding: 4rem 0; 
   overflow: hidden;
 }
 
@@ -160,7 +150,7 @@
 }
 .uni-logos-slide {
   display: flex;
-  width: calc(250px * 12); /* 250px per card * 6 logos * 2 for clones */
+  width: calc(250px * 12); 
   animation: 35s slide infinite linear;
 }
 .university-logo {
@@ -188,13 +178,11 @@
   to { transform: translateX(-50%); }
 }
 
-/* --- Embedded Student List Section --- */
 .student-list-embed-section {
-  background-color: #f8f9fa; /* Match the student list background */
-  padding: 4rem 1.5rem; /* Ensure consistent padding */
+  background-color: #f8f9fa; 
+  padding: 4rem 1.5rem; 
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .talent-hero-section .hero-content h1 {
         font-size: 2.5rem;
@@ -206,14 +194,14 @@
         font-size: 2rem;
     }
     .stats-grid {
-        grid-template-columns: 1fr; /* Stack cards on small screens */
+        grid-template-columns: 1fr; 
     }
     .university-logo {
-        width: 200px; /* Adjust size for smaller screens */
+        width: 200px; 
         margin: 0 20px;
     }
     .uni-logos-slide {
-        width: calc(200px * 12); /* Adjust animation width */
+        width: calc(200px * 12); 
     }
 }
 

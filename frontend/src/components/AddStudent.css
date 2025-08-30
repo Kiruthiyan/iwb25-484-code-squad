@@ -1,11 +1,9 @@
-/* Imports the "Poppins" font from Google Fonts for a modern, clean look. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* --- MAIN CONTAINER --- */
 .form-container {
-  max-width: 850px; /* Slightly wider for better spacing */
+  max-width: 850px; 
   margin: 2rem auto;
-  padding: 2.5rem 3rem; /* More horizontal padding */
+  padding: 2.5rem 3rem; 
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 12px;
@@ -13,7 +11,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* --- HEADER --- */
 .form-container h2 {
   text-align: center;
   color: #212529;
@@ -22,11 +19,10 @@
   letter-spacing: -0.5px;
 }
 
-/* --- GRID LAYOUT --- */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.8rem 2.2rem; /* Increased gap for more breathing room */
+  gap: 1.8rem 2.2rem; 
 }
 .form-group {
   position: relative;
@@ -37,15 +33,13 @@
   grid-column: 1 / -1;
 }
 
-/* --- LABELS --- */
 .form-label {
   margin-bottom: 0.6rem;
   font-weight: 500;
   color: #495057;
-  font-size: 0.95rem; /* Slightly larger label */
+  font-size: 0.95rem; 
 }
 
-/* --- INPUT WRAPPER & ICONS --- */
 .input-wrapper {
   position: relative;
   display: flex;
@@ -53,27 +47,26 @@
 }
 .input-icon {
   position: absolute;
-  left: 15px; /* More padding for icon */
+  left: 15px; 
   top: 50%;
-  transform: translateY(-50%); /* Perfect vertical centering */
+  transform: translateY(-50%); 
   color: #adb5bd;
   font-size: 1.1rem;
   z-index: 2;
 }
 
-/* --- BASE INPUT STYLES (IMPROVED) --- */
 .form-input,
 .form-select,
 .form-textarea {
   width: 100%;
-  height: 52px; /* Taller inputs for better click/touch targets */
+  height: 52px; 
   padding: 0.8rem;
-  padding-left: 3rem; /* Increased padding for the icon */
-  border: 1px solid #ced4da; /* Softer border color */
-  border-radius: 8px; /* Slightly more rounded */
-  font-size: 1.05rem; /* Larger, more readable font */
+  padding-left: 3rem; 
+  border: 1px solid #ced4da; 
+  border-radius: 8px; 
+  font-size: 1.05rem; 
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa; /* Off-white background */
+  background-color: #f8f9fa; 
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   box-sizing: border-box;
 }
@@ -86,12 +79,11 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .form-textarea {
-  height: auto; /* Allow textarea to grow */
+  height: auto; 
   min-height: 100px;
-  padding-top: 1rem; /* Better padding for multi-line text */
+  padding-top: 1rem; 
 }
 
-/* --- VALIDATION STYLES (Clearer Feedback) --- */
 .validation-icon {
   position: absolute;
   right: 15px;
@@ -108,13 +100,11 @@
   margin-top: 0.4rem;
 }
 
-/* --- FILE INPUTS (IMPROVED) --- */
 .file-input-wrapper {
   position: relative;
   width: 100%;
   height: 52px;
 }
-/* The invisible file input that handles the click */
 .file-input-wrapper .form-input[type="file"] {
   width: 100%;
   height: 100%;
@@ -125,9 +115,8 @@
   cursor: pointer;
   z-index: 3;
 }
-/* The visual representation of the file input */
 .file-input-wrapper::after {
-  content: attr(data-file-name); /* This will show the file name */
+  content: attr(data-file-name); 
   position: absolute;
   left: 0;
   top: 0;
@@ -144,13 +133,11 @@
   box-sizing: border-box;
   transition: border-color 0.3s, background-color 0.3s;
 }
-/* Change the look when a file is chosen */
 .file-input-wrapper:has(input[type="file"]:valid)::after {
   color: #212529;
-  border-color: #28a745; /* Green border when a file is selected */
+  border-color: #28a745; 
 }
 
-/* --- REACT-SELECT (Skills) --- */
 .skills-wrapper .select__control {
   height: 52px;
   border: 1px solid #ced4da;
@@ -170,10 +157,9 @@
   font-size: 1.05rem;
 }
 .skills-wrapper .select__multi-value {
-  background-color: #e0eaff; /* Softer color for selected items */
+  background-color: #e0eaff; 
 }
 
-/* --- RADIO BUTTONS --- */
 .radio-group-sex, .radio-group {
   height: 52px;
   display: flex;
@@ -184,7 +170,6 @@
 .radio-option { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 1.05rem; }
 .radio-option input[type="radio"] { accent-color: #007bff; width: 1.3em; height: 1.3em; }
 
-/* --- SUBMIT BUTTON --- */
 .submit-btn {
   grid-column: 1 / -1;
   height: 52px;

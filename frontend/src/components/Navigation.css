@@ -1,4 +1,3 @@
-/* Navbar Layout */
 .navbar {
   background-color: #001f3d;;
   padding: 0 2rem;
@@ -11,7 +10,6 @@
   height: 80px;
 }
 
-/* Left logo */
 .navbar-left {
   flex: 1;
 }
@@ -22,7 +20,6 @@
   text-decoration: overline;
 }
 
-/* Center nav */
 .nav-list {
   flex: 1;
   display: flex;
@@ -51,7 +48,6 @@
   padding: 0.5rem 1rem;
 }
 
-/* --- MODIFIED SECTION: Right side (Login/Signup & Logout) --- */
 .navbar-right {
   flex: 1;
   display: flex;
@@ -59,9 +55,8 @@
   align-items: center;
 }
 
-/* NEW STYLING for Login/Signup to look like primary buttons */
 .auth-link {
-  background-color: #00aaff; /* Primary blue */
+  background-color: #00aaff; 
   color: white;
   padding: 0.6rem 1.1rem;
   border-radius: 5px;
@@ -73,9 +68,9 @@
 }
 
 .auth-link:hover {
-  background-color: #ffffff; /* Darker blue on hover */
+  background-color: #ffffff;
   transform: scale(1.05);
-  color: rgb(0, 0, 0); /* Ensures text remains white */
+  color: rgb(0, 0, 0); 
 }
 
 .divider {
@@ -84,9 +79,8 @@
   font-size: 1.2rem;
 }
 
-/* UPDATED STYLING for Logout button for consistency */
 .logout-btn {
-  background-color: #dc3545; /* A clear 'danger' red */
+  background-color: #dc3545;
   color: white;
   border: none;
   padding: 0.6rem 1.1rem;
@@ -98,18 +92,15 @@
 }
 
 .logout-btn:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; 
   transform: scale(1.05);
 }
 
-/* --- END OF MODIFIED SECTION --- */
 
-/* Hamburger Menu Icon */
 .hamburger-menu {
   display: none;
 }
 
-/* Responsive (Mobile) */
 @media screen and (max-width: 960px) {
   .nav-list {
     position: absolute;
@@ -141,7 +132,6 @@
     padding: 1.2rem 0;
   }
   .navbar-right {
-    /* Hide the buttons on mobile, as login/logout is often handled in the menu */
     display: none;
   }
   .hamburger-menu {

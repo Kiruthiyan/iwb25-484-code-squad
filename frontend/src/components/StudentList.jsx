@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { getData } from '../apiService'; // Fetches from your Ballerina backend
-import SearchBar from './SearchBar';     // The search input component
-import './StudentList.css';             // Styles for this component
+import { getData } from '../apiService'; 
+import SearchBar from './SearchBar';     
+import './StudentList.css';             
 
-// ===================================================================
-// SECTION 1: REUSABLE SUB-COMPONENT for a single Candidate Card
-// ===================================================================
+
 
 function CandidateCard({ profile, name, city, description, phoneNo, linkedin, skills }) {
-  // A fallback profile image if one isn't provided from the database
   const profileImage = profile || "/images/default-profile.png";
   
   return (
@@ -40,9 +37,6 @@ CandidateCard.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-// ===================================================================
-// SECTION 2: MAIN COMPONENT to display the entire list
-// ===================================================================
 const StudentList = () => {
     const [masterList, setMasterList] = useState([]);
     const [filteredStudents, setFilteredStudents] = useState([]);
@@ -52,31 +46,26 @@ const StudentList = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    // This calculates the list of unique skills for the filter dropdown
     const uniqueSkills = useMemo(() => {
         const allSkills = masterList.flatMap(student => student.skills || []);
         return [...new Set(allSkills)].sort();
     }, [masterList]);
 
-    // This useEffect fetches the initial data from the backend when the page loads
     useEffect(() => {
         const fetchStudentsFromBackend = async () => {
             try {
-                // Fetches the combined data from the Ballerina /students endpoint
                 const dataFromBackend = await getData('students');
 
-                // Converts the Firebase object-of-objects into a usable array
                 const studentArray = dataFromBackend ? 
                     Object.keys(dataFromBackend).map(key => ({
                         id: key,
                         ...dataFromBackend[key]
                     })) : [];
 
-                // Sorts the data so the most recently submitted entries appear first
                 studentArray.sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt));
 
                 setMasterList(studentArray);
-                setFilteredStudents(studentArray); // Initially, the filtered list is the full list
+                setFilteredStudents(studentArray); 
             } catch (err) {
                 console.error("Error fetching students from backend:", err);
                 setError('Could not load candidate data. Please try again later.');
@@ -85,9 +74,8 @@ const StudentList = () => {
             }
         };
         fetchStudentsFromBackend();
-    }, []); // The empty array [] means this runs only once.
+    }, []); 
 
-    // This useEffect handles all filtering and sorting whenever a control changes
     useEffect(() => {
         let results = [...masterList];
         const lowercasedFilter = searchTerm.toLowerCase();

@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import StudentList from './StudentList'; // We are embedding the StudentList
+import StudentList from './StudentList'; 
 import { FaUsers, FaUniversity, FaUserGraduate, FaCodeBranch } from 'react-icons/fa';
-import './TalentDashboard.css'; // MODIFIED: CSS file is now renamed
+import './TalentDashboard.css'; 
 
-// ===================================================================
-// SECTION 1: STATIC DATA FOR THE DASHBOARD
-// ===================================================================
+
 const universityLogos = [
   { name: 'University of Moratuwa', logoUrl: '/images/uom.jpg' },
   { name: 'University of Colombo', logoUrl: '/images/uoc.jpg' },
@@ -24,9 +22,6 @@ const passoutStats = [
   { icon: <FaUniversity />, number: '20+', label: 'Universities with STEM Programs' },
 ];
 
-// ===================================================================
-// SECTION 2: REUSABLE SUB-COMPONENTS
-// ===================================================================
 
 function StatCard({ icon, number, label }) {
     return (
@@ -55,19 +50,17 @@ UniversityLogo.propTypes = {
     logoUrl: PropTypes.string.isRequired,
 };
 
-// ===================================================================
-// SECTION 3: MAIN TALENT DASHBOARD COMPONENT
-// ===================================================================
+
 const TalentDashboard = () => {
     return (
         <div className="talent-dashboard-wrapper">
-            {/* --- Hero Section for the Talent Dashboard --- */}
+            
             <section className="talent-hero-section">
-                {/* Background image for the hero section */}
+                
                 <div className="hero-background">
                     <img src="/images/hero5.jpg" alt="Talent hero background" className="active" />
                 </div>
-                {/* Overlay for readability */}
+                
                 <div className="hero-overlay"></div>
 
                 <div className="hero-content">
@@ -77,7 +70,7 @@ const TalentDashboard = () => {
                 </div>
             </section>
 
-            {/* --- Annual Passouts Stats Section --- */}
+            
             <section className="stats-section">
                 <div className="section-container">
                     <div className="stats-grid">
@@ -88,13 +81,12 @@ const TalentDashboard = () => {
                 </div>
             </section>
 
-            {/* --- University Showcase Section --- */}
+           
             <section className="university-showcase-section">
                 <div className="section-container">
                     <h2 className="section-heading">Partnering with Leading Universities</h2>
                     <div className="university-logos-container">
                         <div className="uni-logos-slide">
-                            {/* We duplicate the list for a seamless scrolling effect */}
                             {universityLogos.map(uni => <UniversityLogo key={uni.name} {...uni} />)}
                             {universityLogos.map(uni => <UniversityLogo key={`${uni.name}-clone`} {...uni} />)}
                         </div>
@@ -102,7 +94,6 @@ const TalentDashboard = () => {
                 </div>
             </section>
             
-            {/* --- Embedded StudentList Component --- */}
             <section className="student-list-embed-section">
                 <StudentList />
             </section>
