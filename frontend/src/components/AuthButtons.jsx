@@ -7,7 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { FaEnvelope, FaLock, FaGoogle } from "react-icons/fa";
-import "./AuthButtons.css"; // <-- THIS IS THE CORRECTED LINE
+import "./AuthButtons.css"; 
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");

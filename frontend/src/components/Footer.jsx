@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// --- NEW: Import the icons used in the footer ---
+// Import the icons used in the footer
 import { FaPhone, FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import './Footer.css'; // Your new CSS file will be linked here
+import './Footer.css'; 
 
 const Footer = () => {
   return (
-    // The id is kept from your example, useful for any remaining anchor links
+    
     <footer id="footer-contact" className="footer-section">
       <div className="footer-grid">
         <div className="footer-col">

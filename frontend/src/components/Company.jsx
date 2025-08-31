@@ -2,16 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Company.css'; // The single CSS file for this page
 
-// --- ICON IMPORTS ---
+// ICON IMPORTS
 // Using only `react-icons/fa` to avoid errors with fa6
 import { 
   FaCheckCircle, FaPlayCircle, FaRocket, FaUsers, FaChartLine, FaArrowRight,
   FaStar, FaBookOpen, FaStream, FaHandPointer, FaQuoteLeft 
 } from 'react-icons/fa';
 
-// ===================================================================
-// STATIC DATA
-// ===================================================================
 
 const recruiterBenefits = [
   { icon: <FaUsers />, text: "Tap into a community of 10M+ engaged, startup-ready candidates." },
@@ -27,9 +24,6 @@ const userQuotes = [
   { text: "Half of the offers I give are sourced from NexusLink. It's the best product for anyone looking for startup talent." }
 ];
 
-// ===================================================================
-// THE MAIN COMPANY COMPONENT
-// ===================================================================
 const Company = () => {
   return (
     <div className="company-page-wrapper">

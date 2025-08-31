@@ -36,7 +36,7 @@ CandidateCard.propTypes = {
   linkedin: PropTypes.string,
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
-
+// main component
 const StudentList = () => {
     const [masterList, setMasterList] = useState([]);
     const [filteredStudents, setFilteredStudents] = useState([]);

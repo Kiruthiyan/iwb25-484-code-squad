@@ -5,7 +5,7 @@ import StudentList from './StudentList';
 import { FaUsers, FaUniversity, FaUserGraduate, FaCodeBranch } from 'react-icons/fa';
 import './TalentDashboard.css'; 
 
-
+// university logos data
 const universityLogos = [
   { name: 'University of Moratuwa', logoUrl: '/images/uom.jpg' },
   { name: 'University of Colombo', logoUrl: '/images/uoc.jpg' },
@@ -50,7 +50,7 @@ UniversityLogo.propTypes = {
     logoUrl: PropTypes.string.isRequired,
 };
 
-
+// main component
 const TalentDashboard = () => {
     return (
         <div className="talent-dashboard-wrapper">
@@ -95,7 +95,7 @@ const TalentDashboard = () => {
             </section>
             
             <section className="student-list-embed-section">
-                <StudentList />
+                <StudentList />{/*student list component */}
             </section>
         </div>
     );

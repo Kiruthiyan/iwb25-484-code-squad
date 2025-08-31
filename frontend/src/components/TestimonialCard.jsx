@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TestimonialCard.css'; 
 
+// main component
 function TestimonialCard({ image, name, job, opinion }) {
   return (
     <div className="testimonial-card">

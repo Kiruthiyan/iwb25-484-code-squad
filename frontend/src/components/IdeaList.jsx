@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 import { getData } from '../apiService';
 import './IdeaList.css'; 
 
-// ===================================================================
-// SECTION 1: REUSABLE SUB-COMPONENT for a single Idea Card
-// ===================================================================
 function IdeaCard({ data }) {
-    // --- CORRECTED CODE ---
     // We now look for the photo URL inside the 'fileUrls' object.
     const photoUrl = data.fileUrls?.founderPhotoUrl || '/images/default-profile.png';
     
-    // This logic correctly finds all certificate URLs inside the 'fileUrls' object.
+    // finds all certificate URLs inside the 'fileUrls' object.
     const certificates = data.fileUrls ? 
         Object.values(data.fileUrls).filter(url => url && (url.includes('certificate') || url.includes('doc'))) : [];
 
@@ -57,9 +53,7 @@ function IdeaCard({ data }) {
 }
 IdeaCard.propTypes = { data: PropTypes.object.isRequired };
 
-// ===================================================================
-// SECTION 2: MAIN COMPONENT (No changes needed here)
-// ===================================================================
+// main component
 const IdeaList = () => {
     const [ideas, setIdeas] = useState([]);
     const [loading, setLoading] = useState(true);

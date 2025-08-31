@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import IdeaList from '../components/IdeaList'; 
 import { FaRocket, FaLightbulb, FaChartLine, FaUsers } from 'react-icons/fa';
-import './StartupPage.css'; // Make sure this CSS file exists and is linked
+import './StartupPage.css'; 
 
 
 

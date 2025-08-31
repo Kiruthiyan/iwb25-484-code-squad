@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getData } from '../apiService'; // MODIFIED: Import our backend helper
+import { getData } from '../apiService'; 
 import { Link } from 'react-router-dom';
 import './FindUsPage.css'; 
 
-// --- Importing all necessary components and icons ---
+// Importing all necessary components and icons ---
 import StudentList from './StudentList'; 
 import IdeaList from './IdeaList';
 import { BsBriefcase, BsLightbulb, BsPeople } from 'react-icons/bs';
 
-// ===================================================================
-// DUMMY DATA (for static sections)
-// ===================================================================
+// dummy data
 
 const famousCompanies = [
   { name: 'WSO2', logoUrl: '/images/wso2.png' },
@@ -33,9 +31,7 @@ const trendingJobs = [
     { position: 'Backend Developer (Go)', salary: '$125k – $185k USD' },
 ];
 
-// ===================================================================
-// REUSABLE SUB-COMPONENTS
-// ===================================================================
+
 
 function InfoBoxCard({ icon, title, description, linkText, to }) {
     const isScrollLink = to.startsWith('#');
@@ -90,9 +86,7 @@ AdvertisementCard.propTypes = {
     contactEmail: PropTypes.string.isRequired, contactPhone: PropTypes.string.isRequired,
 };
 
-// ===================================================================
-// MAIN COMPONENT TO DISPLAY THE ENTIRE PAGE
-// ===================================================================
+// Main component
 const FindUsPage = () => {
     const [advertisements, setAdvertisements] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -147,7 +141,7 @@ const FindUsPage = () => {
                 </div>
             </section>
 
-            {/* NEW: Info Box Section for Navigation */}
+            {/*  Info Box Section for Navigation */}
             <section className="info-box-section">
                 <div className="info-box-grid">
                     <InfoBoxCard

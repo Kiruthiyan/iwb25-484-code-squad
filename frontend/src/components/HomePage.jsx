@@ -1,6 +1,3 @@
-// =_=================================================================_
-// SECTION 1: IMPORTS & HELPERS
-// =_=================================================================_
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import TestimonialCard from '../components/TestimonialCard';
@@ -46,9 +43,7 @@ const CountUpNumber = ({ target, suffix, isVisible }) => {
   return <div className="stat-number">{count.toLocaleString()}{suffix}</div>;
 };
 
-// =_=================================================================_
-// SECTION 2: STATIC DATA
-// =_=================================================================_
+// static data
 const backgroundImages = [ '/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg' ];
 
 const testimonialsData = [
@@ -57,9 +52,7 @@ const testimonialsData = [
   { id: 't3', image: '/images/testimonial3.jpeg', name: 'Sofia Rossi', job: 'UI/UX Designer', opinion: 'The quality of job advertisements is top-notch. I found a role at a design-focused company that truly values creativity.' },
 ];
 
-// =_=================================================================_
-// SECTION 3: THE MAIN HOME PAGE COMPONENT
-// =_=================================================================_
+// the main component
 const HomePage = () => {
   const location = useLocation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -162,10 +155,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* =_=================================================================_ */}
-      {/* --- REVAMPED PERSONA SECTION (WITH REORDERED CONTENT) --- */}
-      {/* =_=================================================================_ */}
       <section className="home-section persona-section">
         <div className="home-content-container">
           <div className="section-header">
@@ -173,7 +162,7 @@ const HomePage = () => {
           </div>
           <div className="persona-cards-grid">
             
-            {/* --- STUDENT CARD (Order Changed) --- */}
+            {/*student card */}
             <Link to="/talentD" className="persona-card student-card">
               <div className="persona-card-content">
                 <h3>Student or Intern</h3>
@@ -183,7 +172,7 @@ const HomePage = () => {
               <div className="persona-card-cta">Explore Talent Profiles <span>&rarr;</span></div>
             </Link>
 
-            {/* --- COMPANY CARD (Order Changed) --- */}
+            {/* company card*/}
             <Link to="/company" className="persona-card company-card">
               <div className="persona-card-content">
                 <h3>Company</h3>
@@ -193,7 +182,7 @@ const HomePage = () => {
               <div className="persona-card-cta">Discover Top Talent <span>&rarr;</span></div>
             </Link>
 
-            {/* --- STARTUP CARD (Order Changed) --- */}
+            {/* startup card */}
             <Link to="/startup" className="persona-card startup-card">
               <div className="persona-card-content">
                 <h3>Startup or Innovator</h3>
@@ -207,7 +196,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* --- MODIFIED: "ABOUT US" SECTION --- */}
+      {/* about us */}
       <section ref={aboutSectionRef} className="home-section about-section">
         <div className="home-content-container">
           <div className="about-split-layout">
@@ -235,7 +224,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* --- TESTIMONIALS SECTION --- */}
+      {/* testimonial section */}
       <section className="home-section testimonials-section">
         <div className="home-content-container">
           <h2>Voices of Our Community</h2>

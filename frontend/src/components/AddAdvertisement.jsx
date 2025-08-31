@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { db } from "../firebase"; 
-import { ref, set, push } from "firebase/database"; 
-import "./AddAdvertisement.css"; 
+import { db } from "../firebase"; // Import Firebase Realtime Database
+import { ref, set } from "firebase/database"; // Functions to save data
+import "./AddAdvertisement.css"; // Import CSS styling
 import {
   FaBuilding,
   FaBriefcase,
@@ -9,11 +9,11 @@ import {
   FaEnvelope,
   FaPhone,
   FaPencilAlt,
-} from "react-icons/fa";
-import { getAuth } from "firebase/auth";
-import { useAuth } from "../context/AuthContext";
+} from "react-icons/fa"; // Import icons for form fields
+import { useAuth } from "../context/AuthContext"; // Import authentication context
 
 const AddAdvertisement = () => {
+  // Initial empty form values
   const initialState = {
     companyName: "",
     position: "",
@@ -22,12 +22,14 @@ const AddAdvertisement = () => {
     contactPhone: "",
     message: "",
   };
-  const [formData, setFormData] = useState(initialState);
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
-  const auth = useAuth();
 
+  const [formData, setFormData] = useState(initialState); // Store form data
+  const [errors, setErrors] = useState({}); // Store validation errors
+  const [loading, setLoading] = useState(false); // Show loading state
+  const [submitMessage, setSubmitMessage] = useState(""); // Show success/error message
+  const auth = useAuth(); // Get logged-in user details
+
+  // Check if each field is valid
   const validateField = (name, value) => {
     let errorMsg = "";
     if (!value.trim()) {
@@ -42,15 +44,19 @@ const AddAdvertisement = () => {
     return errorMsg === "";
   };
 
+  // Update form data when user types
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     validateField(name, value);
   };
 
+  // Save advertisement to Firebase when form is submitted
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isFormValid = true;
+
+    // Validate all fields
     Object.keys(formData).forEach((key) => {
       if (!validateField(key, formData[key])) {
         isFormValid = false;
@@ -65,32 +71,29 @@ const AddAdvertisement = () => {
     setLoading(true);
     setSubmitMessage("Posting advertisement...");
     try {
-      
       const finalJsonData = {
         ...formData,
-        postedAt: new Date().toISOString(),
+        postedAt: new Date().toISOString(), // Add current date & time
       };
 
-      
+      // Save ad under current user’s UID in Firebase
       const adListRef = ref(db, `advertisements/${auth.currentUser.uid}`);
-
- 
-
       await set(adListRef, finalJsonData);
 
       setSubmitMessage("Advertisement posted successfully!");
-      setFormData(initialState);
+      setFormData(initialState); // Reset form data
       setErrors({});
-      e.target.reset(); // Clear the form fields
+      e.target.reset(); // Clear form fields
     } catch (err) {
       console.error("Error posting advertisement: ", err);
       setSubmitMessage("Failed to post advertisement. Please try again.");
     } finally {
       setLoading(false);
-      setTimeout(() => setSubmitMessage(""), 5000);
+      setTimeout(() => setSubmitMessage(""), 5000); // Clear message after 5s
     }
   };
 
+  // Show validation class for input fields
   const getValidationClass = (fieldName) => {
     if (errors[fieldName]) return "is-invalid";
     if (formData[fieldName] && !errors[fieldName]) return "is-valid";
@@ -102,6 +105,7 @@ const AddAdvertisement = () => {
       <form onSubmit={handleSubmit} noValidate>
         <h2>Post a Job Advertisement</h2>
         <div className="form-grid">
+          {/* Company Name */}
           <div className="form-group">
             <label className="form-label">Company Name</label>
             <div className="input-wrapper">
@@ -118,6 +122,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.companyName}</span>
             )}
           </div>
+
+          {/* Position / Job Title */}
           <div className="form-group">
             <label className="form-label">Position / Job Title</label>
             <div className="input-wrapper">
@@ -134,6 +140,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.position}</span>
             )}
           </div>
+
+          {/* Contact Person */}
           <div className="form-group">
             <label className="form-label">Contact Person</label>
             <div className="input-wrapper">
@@ -150,6 +158,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.contactPerson}</span>
             )}
           </div>
+
+          {/* Contact Email */}
           <div className="form-group">
             <label className="form-label">Contact Email</label>
             <div className="input-wrapper">
@@ -166,6 +176,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.contactEmail}</span>
             )}
           </div>
+
+          {/* Contact Phone */}
           <div className="form-group">
             <label className="form-label">Contact Phone</label>
             <div className="input-wrapper">
@@ -182,6 +194,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.contactPhone}</span>
             )}
           </div>
+
+          {/* Advertisement Message */}
           <div className="form-group full-width">
             <label className="form-label">Advertisement Message</label>
             <div className="input-wrapper">
@@ -198,6 +212,8 @@ const AddAdvertisement = () => {
               <span className="validation-error">{errors.message}</span>
             )}
           </div>
+
+          {/* Submit Button */}
           <button
             type="submit"
             className="submit-btn full-width"
