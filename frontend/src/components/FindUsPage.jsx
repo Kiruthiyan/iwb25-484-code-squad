@@ -4,7 +4,7 @@ import { getData } from '../apiService';
 import { Link } from 'react-router-dom';
 import './FindUsPage.css'; 
 
-// Importing all necessary components and icons ---
+// Importing all necessary components and icons
 import StudentList from './StudentList'; 
 import IdeaList from './IdeaList';
 import { BsBriefcase, BsLightbulb, BsPeople } from 'react-icons/bs';
@@ -206,7 +206,7 @@ const FindUsPage = () => {
             </div>
             
             <section id="student-list-section" className="component-section">
-                <StudentList />
+                <StudentList /> 
             </section>
 
             <section id="idea-list-section" className="component-section">

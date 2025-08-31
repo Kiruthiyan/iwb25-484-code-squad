@@ -10,11 +10,11 @@ const ContactPage = () => {
     message: '',
   });
 
-  // State to manage the submission process (e.g., disabling the button)
+  // State to manage the submission process
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // State to display feedback to the user (e.g., success or error messages)
+  // State to display feedback to the user 
   const [statusMessage, setStatusMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
+  const [messageType, setMessageType] = useState(''); // success/error
 
   // This function updates the state whenever the user types in an input field
   const handleInputChange = (e) => {

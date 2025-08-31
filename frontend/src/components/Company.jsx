@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Company.css'; // The single CSS file for this page
+import './Company.css';
 
-// ICON IMPORTS
-// Using only `react-icons/fa` to avoid errors with fa6
+// importing icons
 import { 
   FaCheckCircle, FaPlayCircle, FaRocket, FaUsers, FaChartLine, FaArrowRight,
   FaStar, FaBookOpen, FaStream, FaHandPointer, FaQuoteLeft 
@@ -28,7 +27,7 @@ const Company = () => {
   return (
     <div className="company-page-wrapper">
       
-      {/* --- SECTION 1: HERO --- */}
+      {/* hero */}
       <section className="company-section hero-section">
   <img src="/images/hero7.jpg" alt="Hero Background" className="hero-image" />
   <div className="company-hero-overlay"></div>
@@ -39,7 +38,7 @@ const Company = () => {
   </div>
 </section>
 
-      {/* --- SECTION 2: AI AUTOPILOT --- */}
+      {/* autopilot */}
       <section className="company-section autopilot-section">
         <div className="company-content-container autopilot-grid">
           <div className="autopilot-text">
@@ -56,7 +55,7 @@ const Company = () => {
         </div>
       </section>
 
-      {/* --- SECTION 3: ATS --- */}
+      {/* ATS */}
       <section className="company-section ats-section">
         <div className="company-content-container ats-grid">
           <div className="ats-image">
@@ -71,7 +70,7 @@ const Company = () => {
         </div>
       </section>
       
-      {/* --- SECTION 4: WHY RECRUITERS LOVE US --- */}
+      {/* why they love us */}
       <section className="company-section love-us-section">
         <div className="company-content-container">
           <div className="split-title-group">
@@ -91,7 +90,7 @@ const Company = () => {
 
       
 
-      {/* --- SECTION 6: QUOTES --- */}
+      {/* quotes */}
       <section className="company-section quotes-section">
         <div className="company-content-container">
           <div className="split-title-group">

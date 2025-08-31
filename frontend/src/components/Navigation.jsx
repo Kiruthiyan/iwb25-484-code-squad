@@ -12,7 +12,7 @@ const Navigation = ({ user }) => {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // --- Reusable function to close menu and scroll to top ---
+  // Reusable function to close menu and scroll to top 
   const handleLinkClick = () => {
     closeMenu();
     window.scrollTo(0, 0);

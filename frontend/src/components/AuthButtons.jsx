@@ -16,7 +16,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // --- Handler for Email/Password Login ---
+  // Handler for Email/Password Login
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -49,7 +49,7 @@ const LoginPage = () => {
     }
   };
 
-  // --- Handler for Google Sign-In ---
+  //Handler for Google Sign-In 
   const handleGoogleSignIn = async () => {
     setError("");
     setLoading(true);
